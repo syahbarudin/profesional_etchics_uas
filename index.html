@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etika Big Data & Machine Learning | Kelompok TI</title>
+    <title>Etika Big Data & Machine Learning | Kelompok 4</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
+            --bg-color: #05070a;
             --card-bg: #111827;
             --accent-green: #39ff14;
             --accent-blue: #3b82f6;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; scroll-behavior: smooth; }
@@ -19,64 +19,65 @@
 
         /* HEADER */
         header { background-color: rgba(17, 24, 39, 0.9); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(57, 255, 20, 0.2); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { 
-            font-size: 1.2rem; 
-            font-weight: bold; 
-            letter-spacing: 1px; 
-            display: flex;
-            align-items: center; 
-            gap: 10px; /* Jarak antara logo dan tulisan ETHICS */
-        }
-        .logo img {
-            height: 40px; /* Ukuran tinggi logo, bisa lu ubah sesuai selera */
-            width: auto;}
-        .logo span { 
-            color: var(--accent-green); }
-        /* HERO SECTION */
-        .hero { padding: 150px 20px 80px 20px; text-align: center; background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero h1 span { color: var(--accent-green); }
-        .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 30px auto; }
-        
-        .university-badge { display: inline-block; padding: 8px 20px; background-color: rgba(59, 130, 246, 0.2); border: 1px solid var(--accent-blue); border-radius: 20px; font-size: 0.9rem; margin-bottom: 30px; font-weight: bold; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+        .logo img { height: 35px; width: auto; border-radius: 5px;}
+        .logo span { color: var(--accent-green); }
 
-        .team-grid { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
-        .team-member { background: var(--card-bg); padding: 10px 20px; border-radius: 5px; font-size: 0.9rem; border-left: 3px solid var(--accent-green); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        /* HERO SECTION */
+        .hero { padding: 160px 20px 80px 20px; text-align: center; background: radial-gradient(circle at top, rgba(59, 130, 246, 0.15) 0%, transparent 60%); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; }
+        .hero h1 span { color: var(--accent-green); text-shadow: 0 0 15px rgba(57, 255, 20, 0.3); }
+        .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 30px auto; }
+        .university-badge { display: inline-block; padding: 8px 20px; background-color: rgba(59, 130, 246, 0.2); border: 1px solid var(--accent-blue); border-radius: 20px; font-size: 0.9rem; margin-bottom: 30px; font-weight: bold; letter-spacing: 1px; }
+
+        /* TEAM CARDS WITH HOVER GLOW */
+        .team-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+        .team-member { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; font-size: 0.9rem; border-left: 3px solid var(--accent-green); box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+        .team-member:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(57, 255, 20, 0.1); }
 
         /* CONTENT SECTIONS */
         .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-        .section-title { font-size: 2rem; margin-bottom: 40px; text-align: center; position: relative; }
+        .section-title { font-size: 2.2rem; margin-bottom: 50px; text-align: center; position: relative; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--accent-blue); margin: 15px auto 0 auto; border-radius: 2px; }
 
         /* GRID LAYOUTS */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background-color: var(--card-bg); padding: 30px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.05); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent-green); }
-        .card h3 { color: var(--accent-blue); margin-bottom: 15px; font-size: 1.3rem; }
+        .card { background-color: var(--card-bg); padding: 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent-blue); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+        .card:hover::before { transform: scaleX(1); }
+        .card:hover { transform: translateY(-10px); border-color: rgba(59, 130, 246, 0.4); }
+        .card h3 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.4rem; }
         .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* CSS GRAPHIC PEMANIS */
-        .tech-banner { background: linear-gradient(90deg, #111827 0%, rgba(59, 130, 246, 0.2) 50%, #111827 100%); padding: 40px; text-align: center; border-radius: 15px; margin-top: 40px; border: 1px dashed var(--accent-blue); }
-        .tech-flex { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: left; }
-        .tech-item { flex: 1; min-width: 250px; }
+        /* INTERACTIVE TERMINAL SECTION */
+        .terminal-box { background-color: #0d1117; border: 1px solid #30363d; border-radius: 10px; padding: 30px; margin-top: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); font-family: 'Courier New', Courier, monospace; }
+        .terminal-header { color: var(--accent-blue); margin-bottom: 20px; font-size: 1.2rem; font-weight: bold; text-align: center; border-bottom: 1px dashed #30363d; padding-bottom: 15px;}
         
-        /* FOOTER */
-        footer { background-color: #05070c; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); }
-        sup { color: var(--accent-green); font-weight: bold; }
+        .check-container { display: block; position: relative; padding-left: 35px; margin-bottom: 15px; cursor: pointer; font-size: 1rem; color: #c9d1d9; user-select: none; }
+        .check-container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+        .checkmark { position: absolute; top: 0; left: 0; height: 22px; width: 22px; background-color: #21262d; border: 1px solid #30363d; border-radius: 4px; transition: 0.2s; }
+        .check-container:hover input ~ .checkmark { background-color: #30363d; }
+        .check-container input:checked ~ .checkmark { background-color: var(--accent-green); border-color: var(--accent-green); }
+        .checkmark:after { content: ""; position: absolute; display: none; }
+        .check-container input:checked ~ .checkmark:after { display: block; }
+        .check-container .checkmark:after { left: 7px; top: 3px; width: 5px; height: 10px; border: solid #000; border-width: 0 3px 3px 0; transform: rotate(45deg); }
 
-        /* === MOBILE RESPONSIVE QUERIES === */
+        #deploy-status { margin-top: 30px; padding: 15px; border: 2px dashed #ef4444; color: #ef4444; font-weight: bold; text-align: center; border-radius: 6px; transition: all 0.4s; background: rgba(239, 68, 68, 0.05); }
+
+        /* ANIMATION CLASSES FOR JAVASCRIPT */
+        .hidden { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .show { opacity: 1; transform: translateY(0); }
+
+        /* FOOTER */
+        footer { background-color: #020408; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .nav-container { flex-direction: column; text-align: center; padding: 15px; }
-            .hero { padding: 120px 15px 50px 15px; }
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
+            .hero h1 { font-size: 2.2rem; }
             .team-grid { flex-direction: column; align-items: stretch; }
             .team-member { text-align: center; }
-            .container { padding: 50px 15px; }
-            .section-title { font-size: 1.5rem; }
-            .tech-banner { padding: 25px 15px; }
-            .tech-flex { flex-direction: column; gap: 30px; }
+            .terminal-box { padding: 20px; }
         }
     </style>
 </head>
@@ -85,26 +86,27 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <img src="upb.png" alt="Logo UPB">
+                <!-- Pastikan file logo.png sudah terupload di GitHub -->
+                <img src="upb.png" alt="Logo UPB" onerror="this.style.display='none'"> 
                 <span>ETHICS</span>
             </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="university-badge">UNIVERSITAS PELITA BANGSA 2026 </div>
+    <section class="hero hidden">
+        <div class="university-badge">UNIVERSITAS PELITA BANGSA 2026</div>
         <h1>Etika Penggunaan <br><span>Big Data & Machine Learning</span></h1>
-        <p>Evolusi teknologi informasi yang digerakkan oleh Kecerdasan Buatan (AI) dan Big Data kini telah menjadi tulang punggung operasional di berbagai sektor kritis. Namun di balik lompatan komputasi ini, tersimpan dilema etis yang mengancam otonomi privasi individu.</p>
+        <p>Evolusi teknologi Kecerdasan Buatan (AI) dan Big Data kini telah menjadi tulang punggung di berbagai sektor kritis. Namun di balik lompatan komputasi ini, tersimpan dilema etis yang mengancam otonomi privasi individu jika tidak dikelola dengan benar.</p>
         
         <div class="team-grid">
-            <div class="team-member">Ahmad Yuda Ramadhan<br><small style="color:#888;">312210650 </small></div>
-            <div class="team-member">Faiz Dzaki Ramadhani<br><small style="color:#888;">312210223 </small></div>
-            <div class="team-member">Syahbanrudin Abdillah<br><small style="color:#888;">312210656 </small></div>
-            <div class="team-member">Yudi Fermana<br><small style="color:#888;">312210321 </small></div>
+            <div class="team-member">Ahmad Yuda Ramadhan<br><small style="color:#888;">312210650</small></div>
+            <div class="team-member">Faiz Dzaki Ramadhani<br><small style="color:#888;">312210223</small></div>
+            <div class="team-member">Syahbanrudin Abdillah<br><small style="color:#888;">312210656</small></div>
+            <div class="team-member">Yudi Fermana<br><small style="color:#888;">312210321</small></div>
         </div>
     </section>
 
-    <section class="container">
+    <section class="container hidden">
         <h2 class="section-title">Akar Permasalahan & Dilema Etis</h2>
         <div class="grid-3">
             <div class="card">
@@ -113,7 +115,7 @@
             </div>
             <div class="card">
                 <h3>02. Fragmentasi Basis Data</h3>
-                <p>Jika data historis yang dikumpulkan tidak mewakili populasi secara utuh, AI akan menyerap cacat tersebut dan menghasilkan prediksi yang penuh bias sosial.</p>
+                <p>Jika data historis yang dikumpulkan tidak mewakili populasi secara utuh, AI akan menyerap cacat tersebut dan menghasilkan prediksi yang penuh bias sosial dan diskriminasi.</p>
             </div>
             <div class="card">
                 <h3>03. Informed Consent Semu</h3>
@@ -122,48 +124,103 @@
         </div>
     </section>
 
-    <section class="container" style="background-color: rgba(0,0,0,0.3); padding-top: 60px; padding-bottom: 60px;">
-        <h2 class="section-title">Analisis Kasus Lintas Sektor</h2>
-        <div class="tech-banner">
-            <div class="tech-flex">
-                <div class="tech-item">
-                    <h4 style="color: var(--accent-green); margin-bottom: 10px;">🏥 Sektor Kesehatan</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Eksploitasi data medis pasien untuk keperluan riset tanpa mendapatkan persetujuan tertulis (informed consent) yang sah, serta ancaman peretasan ransomware Wannacry.</p>
-                </div>
-                <div class="tech-item">
-                    <h4 style="color: var(--accent-green); margin-bottom: 10px;">🛒 Sektor Komersial</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Banyak perusahaan komersial melakukan komodifikasi data dengan memanen rekam jejak pencarian konsumen untuk pemasaran agresif yang sangat mencederai etika bisnis.</p>
-                </div>
-                <div class="tech-item">
-                    <h4 style="color: var(--accent-green); margin-bottom: 10px;">🎓 Sektor Pendidikan</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Pemanfaatan Learning Analytics berisiko menjadi alat pengawasan intrusif, ditambah adopsi AI Generatif yang memicu plagiarisme masif dan fenomena halusinasi informasi.</p>
-                </div>
+    <!-- INTERACTIVE SECTION -->
+    <section class="container hidden" style="background-color: rgba(255,255,255,0.02); border-radius: 20px; padding: 60px 40px; margin-top: 40px;">
+        <h2 class="section-title" style="margin-bottom: 20px;">Simulasi Audit Etik Developer</h2>
+        <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Sebagai profesional IT, uji kelayakan algoritma Anda di bawah ini sebelum diluncurkan ke publik.</p>
+        
+        <div class="terminal-box">
+            <div class="terminal-header">&gt;_ SYSTEM.AUDIT_CHECKLIST</div>
+            
+            <label class="check-container">
+                <input type="checkbox" class="ethical-check">
+                <span class="checkmark"></span>
+                [1] Data pelatihan dikumpulkan dengan Izin Eksplisit (Informed Consent).
+            </label>
+            
+            <label class="check-container">
+                <input type="checkbox" class="ethical-check">
+                <span class="checkmark"></span>
+                [2] Model Machine Learning telah diaudit untuk memastikan tidak ada Bias Demografis.
+            </label>
+            
+            <label class="check-container">
+                <input type="checkbox" class="ethical-check">
+                <span class="checkmark"></span>
+                [3] Keputusan algoritma tidak bersifat Black-Box (Menerapkan Explainable AI).
+            </label>
+            
+            <label class="check-container">
+                <input type="checkbox" class="ethical-check">
+                <span class="checkmark"></span>
+                [4] Infrastruktur basis data telah menerapkan enkripsi tingkat tinggi sesuai UU PDP.
+            </label>
+
+            <div id="deploy-status">
+                [!] STATUS: DEPLOYMENT BLOCKED - Syarat etis belum terpenuhi.
             </div>
         </div>
     </section>
 
-    <section class="container">
-        <h2 class="section-title">Solusi & Rekomendasi Etis</h2>
+    <section class="container hidden">
+        <h2 class="section-title">Solusi & Rekomendasi Utama</h2>
         <div class="grid-3">
-            <div class="card" style="border-top: 4px solid var(--accent-green);">
-                <h3>Explainable AI (XAI)</h3>
+            <div class="card">
+                <h3 style="color: var(--accent-blue);">Explainable AI (XAI)</h3>
                 <p>Praktisi TI wajib beralih dari model black-box ke arsitektur AI yang hasil penalaran komputasinya dapat dijelaskan secara runut dan transparan kepada manusia.</p>
             </div>
-            <div class="card" style="border-top: 4px solid var(--accent-green);">
-                <h3>Privacy by Design</h3>
+            <div class="card">
+                <h3 style="color: var(--accent-blue);">Privacy by Design</h3>
                 <p>Kewajiban merancang arsitektur sistem yang mematuhi instrumen hukum pelindungan data, seperti Undang-Undang Pelindungan Data Pribadi (UU PDP), sejak fase perancangan awal.</p>
             </div>
-            <div class="card" style="border-top: 4px solid var(--accent-green);">
-                <h3>Kerangka SHIFT</h3>
-                <p>Penerapan kerangka kerja SHIFT untuk memastikan sistem AI memenuhi unsur Sustainability, Human-centeredness, Inclusiveness, Fairness, dan Transparency.</p>
+            <div class="card">
+                <h3 style="color: var(--accent-blue);">Kerangka SHIFT</h3>
+                <p>Penerapan kerangka kerja untuk memastikan sistem AI memenuhi unsur Sustainability, Human-centeredness, Inclusiveness, Fairness, dan Transparency secara berkelanjutan.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>Disusun oleh Mahasiswa Universitas Pelita Bangsa</sup></p>
+    <footer class="hidden">
+        <p>Disusun oleh Kelompok 4 | Mahasiswa Universitas Pelita Bangsa 2026</p>
         <p style="margin-top: 10px; font-size: 0.8rem;">Membangun teknologi masa depan dengan menyeimbangkan kecanggihan komputasi dan keluhuran etika kemanusiaan.</p>
     </footer>
 
+    <!-- JAVASCRIPT UNTUK ANIMASI DAN INTERAKTIVITAS -->
+    <script>
+        // 1. Logic untuk Terminal Interaktif
+        const checkboxes = document.querySelectorAll('.ethical-check');
+        const statusBox = document.getElementById('deploy-status');
+
+        checkboxes.forEach(box => {
+            box.addEventListener('change', () => {
+                // Mengecek apakah semua checkbox sudah dicentang
+                const allChecked = Array.from(checkboxes).every(c => c.checked);
+                
+                if (allChecked) {
+                    statusBox.style.borderColor = '#39ff14';
+                    statusBox.style.color = '#39ff14';
+                    statusBox.style.background = 'rgba(57, 255, 20, 0.05)';
+                    statusBox.innerHTML = '[✓] STATUS: DEPLOYMENT APPROVED - Model AI siap diluncurkan secara etis.';
+                } else {
+                    statusBox.style.borderColor = '#ef4444';
+                    statusBox.style.color = '#ef4444';
+                    statusBox.style.background = 'rgba(239, 68, 68, 0.05)';
+                    statusBox.innerHTML = '[!] STATUS: DEPLOYMENT BLOCKED - Syarat etis belum terpenuhi.';
+                }
+            });
+        });
+
+        // 2. Logic untuk Animasi Scroll (Fade In & Slide Up)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 }); // Akan terpicu saat 10% elemen terlihat di layar
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
