@@ -19,7 +19,7 @@
 
         /* FIXED HEADER / NAVBAR */
         header { 
-            background-color: rgba(17, 24, 39, 0.85); /* Sedikit transparan di awal */
+            background-color: rgba(17, 24, 39, 0.85); 
             backdrop-filter: blur(12px); 
             -webkit-backdrop-filter: blur(12px);
             position: fixed; 
@@ -28,15 +28,14 @@
             left: 0;
             z-index: 1000; 
             border-bottom: 1px solid rgba(57, 255, 20, 0.1); 
-            transition: all 0.4s ease; /* Transisi halus saat di-scroll */
+            transition: all 0.4s ease; 
         }
 
-        /* Class ini akan aktif via JavaScript saat halaman di-slide kebawah */
         header.scrolled {
             background-color: #0d131f;
             border-bottom: 1px solid rgba(57, 255, 20, 0.3);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            padding: 5px 0; /* Membuat navbar sedikit lebih ramping saat di-scroll */
+            padding: 5px 0; 
         }
 
         .nav-container { 
@@ -70,7 +69,6 @@
         .nav-links a:hover {
             color: var(--accent-green);
         }
-        /* Efek garis bawah interaktif saat menu di-hover */
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -95,13 +93,12 @@
         .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 30px auto; }
         .university-badge { display: inline-block; padding: 8px 20px; background-color: rgba(59, 130, 246, 0.2); border: 1px solid var(--accent-blue); border-radius: 20px; font-size: 0.9rem; margin-bottom: 30px; font-weight: bold; letter-spacing: 1px; }
 
-        /* TEAM CARDS WITH HOVER GLOW */
+        /* TEAM CARDS */
         .team-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
         .team-member { background: var(--card-bg); padding: 15px 25px; border-radius: 8px; font-size: 0.9rem; border-left: 3px solid var(--accent-green); box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
         .team-member:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(57, 255, 20, 0.1); }
 
         /* CONTENT SECTIONS */
-        /* scroll-margin-top disesuaikan agar saat melompat ke section, judulnya tidak tertutup oleh navbar fixed */
         .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px 60px 20px; scroll-margin-top: 80px; } 
         .section-title { font-size: 2.2rem; margin-bottom: 50px; text-align: center; position: relative; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--accent-blue); margin: 15px auto 0 auto; border-radius: 2px; }
@@ -119,7 +116,7 @@
         .terminal-box { background-color: #0d1117; border: 1px solid #30363d; border-radius: 10px; padding: 30px; margin-top: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); font-family: 'Courier New', Courier, monospace; }
         .terminal-header { color: var(--accent-blue); margin-bottom: 20px; font-size: 1.2rem; font-weight: bold; text-align: center; border-bottom: 1px dashed #30363d; padding-bottom: 15px;}
         
-        .check-container { display: block; position: relative; padding-left: 35px; margin-bottom: 15px; cursor: pointer; font-size: 1rem; color: #c9d1d9; user-select: none; }
+        .check-container { display: block; position: relative; padding-left: 35px; margin-bottom: 20px; cursor: pointer; font-size: 1rem; color: #c9d1d9; user-select: none; }
         .check-container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
         .checkmark { position: absolute; top: 0; left: 0; height: 22px; width: 22px; background-color: #21262d; border: 1px solid #30363d; border-radius: 4px; transition: 0.2s; }
         .check-container:hover input ~ .checkmark { background-color: #30363d; }
@@ -130,7 +127,7 @@
 
         #deploy-status { margin-top: 30px; padding: 15px; border: 2px dashed #ef4444; color: #ef4444; font-weight: bold; text-align: center; border-radius: 6px; transition: all 0.4s; background: rgba(239, 68, 68, 0.05); }
 
-        /* ANIMATION CLASSES FOR JAVASCRIPT */
+        /* ANIMATION CLASSES */
         .hidden { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
         .show { opacity: 1; transform: translateY(0); }
 
@@ -151,6 +148,7 @@
 </head>
 <body>
 
+    <!-- NAVBAR HEADER -->
     <header id="main-header">
         <div class="nav-container">
             <div class="logo">
@@ -166,10 +164,11 @@
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero hidden">
         <div class="university-badge">UNIVERSITAS PELITA BANGSA 2026</div>
         <h1>Etika Penggunaan <br><span>Big Data & Machine Learning</span></h1>
-        <p>Evolusi teknologi Kecerdasan Buatan (AI) dan Big Data kini telah menjadi tulang punggung di berbagai sektor kritis. Namun di balik lompatan komputasi ini, tersimpan dilema etis yang mengancam otonomi privasi individu jika tidak dikelola dengan benar.</p>
+        <p>Evolusi teknologi informasi yang digerakkan oleh Kecerdasan Buatan (AI) dan Big Data kini telah melampaui fase eksperimental[cite: 1]. Sayangnya, di balik efisiensi ini, tersimpan dilema etis krusial di mana data kerap memuat rekam jejak privasi sensitif yang terancam dieksploitasi[cite: 1].</p>
         
         <div class="team-grid">
             <div class="team-member">Ahmad Yuda Ramadhan<br><small style="color:#888;">312210650</small></div>
@@ -179,45 +178,48 @@
         </div>
     </section>
 
+    <!-- SECTION 1: AKAR PERMASALAHAN -->
     <section id="akar-permasalahan" class="container hidden">
         <h2 class="section-title">Akar Permasalahan & Dilema Etis</h2>
         <div class="grid-3">
             <div class="card">
-                <h3>01. Black-Box Algorithm</h3>
-                <p>Algoritma AI dirancang dengan kerumitan tinggi sehingga cara mesin mengambil keputusan menjadi sangat tidak transparan, menyulitkan pertanggungjawaban ketika merugikan publik.</p>
+                <h3>01. Problematika Black-Box</h3>
+                <p>Algoritma AI dirancang dengan tingkat kerumitan yang luar biasa tinggi, menyulitkan pelacakan dan pertanggungjawaban ketika sistem menghasilkan output yang merugikan publik[cite: 1].</p>
             </div>
             <div class="card">
-                <h3>02. Fragmentasi Basis Data</h3>
-                <p>Jika data historis yang dikumpulkan tidak mewakili populasi secara utuh, AI akan menyerap cacat tersebut dan menghasilkan prediksi yang penuh bias sosial dan diskriminasi.</p>
+                <h3>02. Kualitas Basis Data</h3>
+                <p>Jika data historis yang dikumpulkan terfragmentasi atau tidak mewakili populasi, maka AI akan menyerap cacat tersebut dan menghasilkan prediksi yang penuh dengan bias[cite: 1].</p>
             </div>
             <div class="card">
                 <h3>03. Informed Consent Semu</h3>
-                <p>Pengguna dipaksa menyetujui kebijakan privasi yang rumit tanpa pemahaman utuh mengenai data spesifik apa saja yang sedang diekstraksi oleh sistem korporasi.</p>
+                <p>Pengguna sering dipaksa menyetujui kebijakan privasi rumit tanpa pemahaman utuh mengenai data spesifik apa saja yang sedang diekstraksi dan distribusinya[cite: 1].</p>
             </div>
         </div>
     </section>
 
+    <!-- SECTION 2: ANALISIS KASUS -->
     <section id="analisis-kasus" class="container hidden" style="background-color: rgba(59, 130, 246, 0.02); border-radius: 20px;">
         <h2 class="section-title">Analisis Kasus Lintas Sektor</h2>
         <div class="grid-3">
             <div class="card" style="border-top: 3px solid var(--accent-blue);">
                 <h3>Sektor Kesehatan</h3>
-                <p>Prediksi diagnostik yang bias karena data latih yang tidak proporsional, berisiko mengabaikan gejala pada kelompok demografis minoritas secara sistemik.</p>
+                <p>Terjadi eksploitasi data medis pasien untuk keperluan riset tanpa persetujuan tertulis yang sah, serta ancaman nyata seperti pencurian data oleh ransomware Wannacry[cite: 1].</p>
             </div>
             <div class="card" style="border-top: 3px solid var(--accent-blue);">
-                <h3>Sektor Finansial</h3>
-                <p>Skoring kredit otomatis dengan Machine Learning yang tanpa sengaja melakukan profil rasial berdasarkan kode pos pelamar (redlining digital).</p>
+                <h3>Sektor Bisnis</h3>
+                <p>Perusahaan komersial melakukan komodifikasi data dengan memanen rekam jejak pencarian konsumen untuk pemasaran agresif yang sangat mencederai etika bisnis[cite: 1].</p>
             </div>
             <div class="card" style="border-top: 3px solid var(--accent-blue);">
-                <h3>Sektor Hukum</h3>
-                <p>Penggunaan Facial Recognition (pengenalan wajah) dalam penegakan hukum yang kerap salah mengenali (false-positive) pada ras tertentu.</p>
+                <h3>Sektor Pendidikan</h3>
+                <p>Pemanfaatan Learning Analytics berisiko menjadi pengawasan intrusif, sementara penggunaan AI Generatif yang tak terkontrol memicu fenomena halusinasi informasi[cite: 1].</p>
             </div>
         </div>
     </section>
 
+    <!-- AUDIT CHECKLIST SECTION (SIMULASI YANG DISESUAIKAN) -->
     <section class="container hidden" style="background-color: rgba(255,255,255,0.02); border-radius: 20px; padding: 60px 40px; margin-top: 40px;">
         <h2 class="section-title" style="margin-bottom: 20px;">Simulasi Audit Etik Developer</h2>
-        <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Sebagai profesional IT, uji kelayakan algoritma Anda di bawah ini sebelum diluncurkan ke publik.</p>
+        <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Sebagai profesional IT, uji kelayakan kepatuhan sistem Anda berdasarkan kajian etika profesi sebelum diluncurkan.</p>
         
         <div class="terminal-box">
             <div class="terminal-header">&gt;_ SYSTEM.AUDIT_CHECKLIST</div>
@@ -225,61 +227,62 @@
             <label class="check-container">
                 <input type="checkbox" class="ethical-check">
                 <span class="checkmark"></span>
-                [1] Data pelatihan dikumpulkan dengan Izin Eksplisit (Informed Consent).
+                [1] PENGUMPULAN DATA: Pengumpulan rekam jejak dan data spesifik telah dilengkapi dengan persetujuan tertulis (informed consent) yang sah[cite: 1].
             </label>
             
             <label class="check-container">
                 <input type="checkbox" class="ethical-check">
                 <span class="checkmark"></span>
-                [2] Model Machine Learning telah diaudit untuk memastikan tidak ada Bias Demografis.
+                [2] KEAMANAN BASIS DATA: Infrastruktur telah dibentengi dengan penerapan otentikasi ganda dan algoritma enkripsi tingkat tinggi[cite: 1].
             </label>
             
             <label class="check-container">
                 <input type="checkbox" class="ethical-check">
                 <span class="checkmark"></span>
-                [3] Keputusan algoritma tidak bersifat Black-Box (Menerapkan Explainable AI).
+                [3] TRANSPARANSI AI: Sistem telah meninggalkan model black-box dan menerapkan paradigma Explainable AI (XAI) yang dapat dijelaskan runutannya[cite: 1].
             </label>
             
             <label class="check-container">
                 <input type="checkbox" class="ethical-check">
                 <span class="checkmark"></span>
-                [4] Infrastruktur basis data telah menerapkan enkripsi tingkat tinggi sesuai UU PDP.
+                [4] KEPATUHAN HUKUM: Arsitektur dibangun dengan fondasi Privacy by Design yang tunduk pada instrumen UU Pelindungan Data Pribadi (UU PDP) sejak awal[cite: 1].
             </label>
 
             <div id="deploy-status">
-                [!] STATUS: DEPLOYMENT BLOCKED - Syarat etis belum terpenuhi.
+                [!] STATUS: DEPLOYMENT BLOCKED - Standar etika profesi dan keamanan data belum terpenuhi.
             </div>
         </div>
     </section>
 
+    <!-- SECTION 3: SOLUSI & REKOMENDASI -->
     <section id="solusi-rekomendasi" class="container hidden">
         <h2 class="section-title">Solusi & Rekomendasi Utama</h2>
         <div class="grid-3">
             <div class="card">
-                <h3 style="color: var(--accent-blue);">Explainable AI (XAI)</h3>
-                <p>Praktisi TI wajib beralih dari model black-box ke arsitektur AI yang hasil penalaran komputasinya dapat dijelaskan secara runut dan transparan kepada manusia.</p>
+                <h3 style="color: var(--accent-blue);">Penerapan Explainable AI</h3>
+                <p>Insinyur TI dituntut untuk merancang arsitektur AI yang hasil penalaran komputasinya transparan, sehingga era model black-box dapat perlahan ditinggalkan[cite: 1].</p>
             </div>
             <div class="card">
-                <h3 style="color: var(--accent-blue);">Privacy by Design</h3>
-                <p>Kewajiban merancang arsitektur sistem yang mematuhi instrumen hukum pelindungan data, seperti Undang-Undang Pelindungan Data Pribadi (UU PDP), sejak fase perancangan awal.</p>
+                <h3 style="color: var(--accent-blue);">Kepatuhan Privacy by Design</h3>
+                <p>Ekosistem digital wajib menjadikan pelindungan data dan instrumen hukum seperti UU PDP sebagai fondasi dasar sejak perancangan arsitektur awal[cite: 1].</p>
             </div>
             <div class="card">
-                <h3 style="color: var(--accent-blue);">Kerangka SHIFT</h3>
-                <p>Penerapan kerangka kerja untuk memastikan sistem AI memenuhi unsur Sustainability, Human-centeredness, Inclusiveness, Fairness, dan Transparency secara berkelanjutan.</p>
+                <h3 style="color: var(--accent-blue);">Modernisasi Keamanan Data</h3>
+                <p>Setiap institusi wajib menerapkan otentikasi ganda, enkripsi tingkat tinggi, serta mengeksplorasi teknologi terdistribusi seperti Blockchain guna mencegah manipulasi[cite: 1].</p>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="hidden">
-        <p>Disusun oleh Kelompok 4 | Mahasiswa Universitas Pelita Bangsa 2026</p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">Membangun teknologi masa depan dengan menyeimbangkan kecanggihan komputasi dan keluhuran etika kemanusiaan.</p>
+        <p>Disusun oleh Kelompok 4 | Universitas Pelita Bangsa 2026</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Menyeimbangkan kecanggihan komputasi dan keluhuran etika kemanusiaan.</p>
     </footer>
 
+    <!-- JAVASCRIPT -->
     <script>
-        // 1. Logic untuk Mengubah Tampilan Navbar Saat Halaman Di-scroll / Di-slide Kebawah
         const header = document.getElementById('main-header');
         window.addEventListener('scroll', () => {
-            // Jika halaman di-scroll ke bawah lebih dari 50px, class "scrolled" akan aktif
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
@@ -287,7 +290,6 @@
             }
         });
 
-        // 2. Logic untuk Terminal Interaktif Audit Checklist
         const checkboxes = document.querySelectorAll('.ethical-check');
         const statusBox = document.getElementById('deploy-status');
 
@@ -298,17 +300,16 @@
                     statusBox.style.borderColor = '#39ff14';
                     statusBox.style.color = '#39ff14';
                     statusBox.style.background = 'rgba(57, 255, 20, 0.05)';
-                    statusBox.innerHTML = '[✓] STATUS: DEPLOYMENT APPROVED - Model AI siap diluncurkan secara etis.';
+                    statusBox.innerHTML = '[✓] STATUS: DEPLOYMENT APPROVED - Sistem mematuhi kode etik TI dan standar regulasi.';
                 } else {
                     statusBox.style.borderColor = '#ef4444';
                     statusBox.style.color = '#ef4444';
                     statusBox.style.background = 'rgba(239, 68, 68, 0.05)';
-                    statusBox.innerHTML = '[!] STATUS: DEPLOYMENT BLOCKED - Syarat etis belum terpenuhi.';
+                    statusBox.innerHTML = '[!] STATUS: DEPLOYMENT BLOCKED - Standar etika profesi dan keamanan data belum terpenuhi.';
                 }
             });
         });
 
-        // 3. Logic untuk Animasi Reveal On Scroll (Fade In & Slide Up)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
